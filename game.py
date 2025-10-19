@@ -74,18 +74,6 @@ class Centipede:
         return self._direction
 
     @property
-    def x(self):
-        return self._pos[0]
-
-    @property
-    def y(self):
-        return self._pos[1]
-
-    @property
-    def __str__(self) -> str:
-        return f"{self.name}({self._body}) - dir={self.direction}"
-
-    @property
     def json(self):
         return {"name": self._name, "body": self._body, "direction": self._direction}
 
@@ -343,11 +331,7 @@ class Game:
     @property
     def running(self):
         return self._running
-
-    @property
-    def total_steps(self):
-        return self._total_steps
-
+        
     def start(self, players_names):
         logger.debug("Reset world")
         self._running = True
